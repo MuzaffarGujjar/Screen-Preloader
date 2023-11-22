@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Muzaffar Techs</title>
+</head>
+<body>
+    <div class="aqua">
+        <span class="percentbar"><h3 class="number">0%</h3></span>
+    </div>
+    <h2>Welcome</h2>
+    <script>
+        let i = 0;
+        let h2 = document.querySelector('h2');
+        let aqua = document.querySelector('.aqua');
+        let body = document.querySelector('body')
+        let number = document.querySelector('.number');
+        let percentbar = document.querySelector('.percentbar');
+
+        let interval = setInterval(function(){
+            number.innerHTML = i+'<span></span>';
+            percentbar.style.width = i+'%';
+            i++
+            if(i == 101){
+                clearInterval(interval)
+                setTimeout(function(){
+                    aqua.style.opacity = '0';
+                    aqua.style.visibility = 'hidden';
+                    body.style.background = '#03a9f4';
+                    h2.style.opacity = '1';
+                    h2.style.visibility = 'visible';
+                })
+            }
+        },100)
+    </script>
+</body>
+</html>
